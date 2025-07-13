@@ -1,0 +1,16 @@
+.login-user-msg {
+    text-align: right;
+}
+
+.message-item {
+    border: 1px solid #dfdfdf;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+}
+
+.msg-date-time {
+    font-size: 0.7rem;
+    color: gray;
+}
+

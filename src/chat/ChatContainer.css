@@ -1,0 +1,31 @@
+.chat-container {
+    width: 100%;
+    display: flex;
+}
+
+.app-header {
+    height: 6vh;
+    width: 100%;
+    text-align: left;
+    color: white;
+    background-color: rgb(149, 97, 0);
+    padding: 0.5rem;
+}
+
+.app-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.contact-section {
+    width: 25%;
+    height: 88vh;
+    padding: 1rem;
+    background: #f4eee5;
+}
+
+.msg-section {
+    width: 75%;
+    height: 88vh;
+    padding: 1rem;
+}

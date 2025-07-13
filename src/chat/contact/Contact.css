@@ -1,0 +1,13 @@
+.contact-header {
+    font-size: 1.5rem;
+}
+
+.contact-item {
+    padding: 1rem 1rem;
+    cursor: pointer;
+    margin: -1rem;
+}
+
+.selected-item {
+    background-color: white;
+}
