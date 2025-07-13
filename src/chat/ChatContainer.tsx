@@ -8,9 +8,14 @@ function ChatContainer () {
     const [searchParams] = useSearchParams();
     const username = searchParams.get('email') ?? '';
     const [selectedContact, setSelectedContact] = useState('');
+    const [refresh, setRefresh] = useState<boolean>(true);
 
     function handleSelect(email: string) {
         setSelectedContact(email);
+        setRefresh(false);
+        setTimeout(() => {
+            setRefresh(true)
+        }, 100)
     }
 
     return (
@@ -25,7 +30,7 @@ function ChatContainer () {
                     <ContactCotainer username={username} handleSelect={handleSelect}/>
                 </div>  
                 <div className="msg-section">
-                    {selectedContact && <MessageContainer selectedContact={selectedContact} loginUsername={username}/>}
+                    {selectedContact && refresh && <MessageContainer selectedContact={selectedContact} loginUsername={username}/>}
                 </div>
             </div>
         </div>

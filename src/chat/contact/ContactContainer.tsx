@@ -18,13 +18,16 @@ const ContactContainer: React.FC<ContactContainerProps> = ({username, handleSele
     const [contacts, setContacts] = useState<ContactListType[]>([]);
 
     function onSelect(index: number) {
-        setContacts([]);
         var tempContacts = contacts;
-        tempContacts[index].selected = !tempContacts[index].selected;
-        tempContacts.map(contact => {
+        setContacts([]);
+        // tempContacts[index].selected = !tempContacts[index].selected;
+        tempContacts.map((contact, i) => {
             setContacts(prevState => [
                 ...prevState,
-                contact
+                {
+                    ...contact,
+                    selected: index == i ? true : false
+                }
             ])
         })
         handleSelect(contacts[index].email);
@@ -33,16 +36,17 @@ const ContactContainer: React.FC<ContactContainerProps> = ({username, handleSele
     useEffect(() => {
         setContacts([]);
         var users = Users.filter(user => user.email != username);
-        users.map(user => {
+        users.map((user, index) => {
             setContacts(prevState => [
                 ...prevState,
                 {
                     name: user.name, 
                     email: user.email, 
-                    selected: false
+                    selected: index == 0 ? true : false
                 }
             ])
         })
+        handleSelect(users[0].email);
     }, [])
 
     return (
